@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { PrefecturesProvider } from "./contexts/prefecturesContext";
+import { PopulationsProvider } from "./contexts/populationsContext";
+import Title from "./components/Title";
+import PrefectureList from "./components/areaSelection/PrefectureList";
+import PopulationGraph from "./components/PopulationGraph";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Title />
+      <PrefecturesProvider>
+        <PopulationsProvider>
+          <PrefectureList />
+          <PopulationGraph />
+        </PopulationsProvider>
+      </PrefecturesProvider>
     </div>
   );
 }

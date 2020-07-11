@@ -1,0 +1,9 @@
+.populations-chart {
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+
+  .recharts-default-legend {
+    text-align: right !important;
+  }
+}
